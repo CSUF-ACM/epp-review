@@ -149,7 +149,7 @@ the license plate number, and whether or not the customer wants a premium wash.
 ##### User Input is surrounded by [] ######
 ```
 I) Check in  
-P) Print check in customers  
+P) Print checked in customers  
 C) Change wash preference  
 O) Check out  
 Q) Quit  
@@ -161,7 +161,7 @@ Premium Wash? (y/n): [y]
 Customer checked in
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -173,7 +173,7 @@ Premium Wash? (y/n): [y]
 Customer checked in
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -185,7 +185,7 @@ Premium Wash? (y/n): [n]
 Customer checked in
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -205,7 +205,7 @@ Premium Wash: Yes
 
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -217,7 +217,7 @@ finishing deleteNode..
 Changed to regular wash
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -237,7 +237,7 @@ Premium Wash: No
 
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -248,7 +248,7 @@ finishing deleteNode..
 Customer removed
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
@@ -264,7 +264,7 @@ Premium Wash: No
 
 
 I) Check in
-P) Print check in customers
+P) Print checked in customers
 C) Change wash preference
 O) Check out
 Q) Quit
