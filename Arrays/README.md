@@ -19,7 +19,7 @@ cout << f[m[2]];    // outputs f[4], which is 2.5
 
 int a[] = {10, 11, 12, 13};     // declares and initializes a[4]
 bool b[] = {false, true};       // declares and initializes b[2]
-char c[] = {'c', 'a', 't'};     // delcares and initializes c[3]
+char c[] = {'c', 'a', 't'};     // declares and initializes c[3]
 
 ```
 
