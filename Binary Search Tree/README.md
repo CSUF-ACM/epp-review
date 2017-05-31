@@ -6,6 +6,8 @@
     given a value, will insert the value into the tree
     - Erase:
     given a value, will remove the value
+- Given a value, the value will be inserted at the end of the tree based on whether it is less 
+than or greater than the nodes already in the tree
 - If storing objects in the BST, make sure that the class has the <, >, ==, and << operators
 overloaded
 - Traversal types
