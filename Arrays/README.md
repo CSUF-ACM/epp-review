@@ -76,7 +76,7 @@ sum of the remaining values.
 
 # Practice Question 2 #
 
-Create a function named "insertMiddle". Its paramters are an array of integers, the size of the array, a
+Create a function named "insertMiddle". Its parameters are an array of integers, the size of the array, a
 second array of integers, the size of the second array
 
 ```C++
