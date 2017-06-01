@@ -29,7 +29,7 @@ Visit https://visualgo.net/en/list for a visual representation of stack and queu
     - When you enqueue an element you insert it through the back of the queue. When you dequeue an element 
     you remove it from the front of the queue
     - The first element that was inserted into the queue would be the one the header points to (the 3)
-##### Enqueuing and dequeuing from stack: #####
+##### Enqueuing and dequeuing from queue: #####
 ![Stack](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/stack.gif)
 
 ##### Visual Representation of Queue: #####
