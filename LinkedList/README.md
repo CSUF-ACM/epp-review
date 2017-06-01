@@ -18,6 +18,9 @@ Visit https://visualgo.net/en/list for a visual representation of stack and queu
     - When you push an element, you insert it at the head of the list. When you pop an element off, you 
     remove the element at the head (the 5) and set the head as the next element (the 2).
     - The first element that was inserted into the stack, would be the one that points to NULL (the 1).
+##### Pushing and popping from stack: #####
+![Stack](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/stack.gif)
+    
 2. Queues: first in, first out
     - A queue can be created with a doubly linked list, like the one below.
     - A doubly linked list contains two pointers per node: one that points to the next element, another 
@@ -26,8 +29,10 @@ Visit https://visualgo.net/en/list for a visual representation of stack and queu
     - When you enqueue an element you insert it through the back of the queue. When you dequeue an element 
     you remove it from the front of the queue
     - The first element that was inserted into the queue would be the one the header points to (the 3)
+##### Enqueuing and dequeuing from stack: #####
+![Stack](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/stack.gif)
 
-### Visual Representation of Queue: ###
+##### Visual Representation of Queue: #####
 ![Doubly Linked List](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/DLL.png)
 
 ----
