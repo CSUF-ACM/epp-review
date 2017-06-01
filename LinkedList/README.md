@@ -1,4 +1,4 @@
-# Linked List#
+# Linked List #
 
 # Quick Notes #
 1. A linked list is a chain of nodes linked by the nodes’ pointers
