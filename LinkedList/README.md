@@ -63,30 +63,34 @@ int main() {
   
    
 1. Create a function that prints all of the elements in the list.
-
+  
 ```C++
 void printList(Node* &head) { 
 }
 ```
-
+  
+    
 2. Create a function inserts an element somewhere in the list, given a position. 0 being the front of the list, 
 1 being second, etc. No need to bound check; assume the user will always insert a valid position.
-
+  
 ```C++
 void insert(Node* &head, int element, int position ) { 
 }
 ```
-
+  
+    
 3. Create a function that connects one list to another and deletes the list that was connected. For example, if 
 list 1 consists of 1, 2, 3, 4 and list 2 consists of 5, 6, 7, 8; after calling the function, list 1 should 
 consists of 1, 2, 3, 4, 5, 6, 7, 8 and list 2 should contain nothing.
-
+   
 ```C++
 void combine(Node* &head1, Node* &head2) { 
 }
 ```
-
+  
+    
 4. Create a function that deletes the whole list
+  
 ```C++
 void deleteList(Node* &head) { 
 }
