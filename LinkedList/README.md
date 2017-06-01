@@ -30,7 +30,7 @@ Visit https://visualgo.net/en/list for a visual representation of stack and queu
     you remove it from the front of the queue
     - The first element that was inserted into the queue would be the one the header points to (the 3)
 ##### Enqueuing and dequeuing from queue: #####
-![Stack](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/stack.gif)
+![Stack](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/queue.gif)
 
 ##### Visual Representation of Queue: #####
 ![Doubly Linked List](https://github.com/omolazabal/ACM-EPP-Review/blob/master/LinkedList/images/DLL.png)
