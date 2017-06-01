@@ -90,7 +90,11 @@ filename << word_or_line; //Writes a word (or a line) at the pointer
 
 # Problems #
 
-1. Create a file using ifstream, write anything you want to it, and then open that same file using ofstream, and read what you just wrote to it. Clear the file when you are done with it.
-2. Create (outside of a .cpp file), a text file with a sequence of 5 numbers. Create a 5 integer array within a .cpp file, open the text file, and then assign the array to the numbers within the file.
+1. Create a file using ifstream, write anything you want to it, and then open that same file using ofstream, and 
+read what you just wrote to it. Clear the file when you are done with it.
+    - Implement this exact same problem using different calls/loops
+2. Create (outside of a .cpp file), a text file with a sequence of 5 numbers. Create a 5 integer array within a 
+.cpp file, open the text file, and then assign the array to the numbers within the file.
     - Change the values of those variables, and then override the values originally within the file with the new values.
-3. Create (outside of a .cpp file), a text file with at least 4 lines of random text. Modify each odd numbered line at the beginning with “I am odd ” and each even numbered line at the beginning with “I am not ”.
+3. Create (outside of a .cpp file), a text file with at least 4 lines of random text. Modify each odd numbered line 
+at the beginning with “I am odd ” and each even numbered line at the beginning with “I am not ”.
