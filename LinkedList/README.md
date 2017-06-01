@@ -101,7 +101,10 @@ void deleteList(Node* &head) {
 }
 ```
 
+5. Create a function that creates a copy of a list. The function will return the pointer to the new list.
 
-
-
+```C++
+Node* copyList(Node* &head1) {
+}
+```
 
