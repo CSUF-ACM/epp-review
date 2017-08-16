@@ -110,19 +110,21 @@ cout << myVar << endl;
 2. Create a simple class of you choosing. Within main, create an array of pointers to your class. Initiliaze and add data using the array of pointers. Demonstrate knowledge of the different ways to dereference pointers.
 3. Create a linked list, using the node struct to mimick the data below:
 
-    Index:  Data
-    0       2  -> 7
-    1       3
-    2       0 -> 5
-    3       null
-    4       9
-    5       1
+| Index | Data    |
+|:-----:|:-------:|
+| 0     | 2  -> 7 |
+| 1     | 3       |
+| 2     | 0 -> 5  |
+| 3     | null    |
+| 4     | 9       |
+| 5     | 1       |
 
-    Print out the data to the screen in the following format:
+Print out the data to the screen in the following format:
+```
+2 7
+3
+0 5
 
-    2 7  
-    3  
-    0 5  
-
-    9  
-    1
+9
+1
+```
