@@ -108,7 +108,16 @@ cout << myVar << endl;
 
 1. Practice creating simple pointers and references for any variable of your choosing
 2. Create a simple class of you choosing. Within main, create an array of pointers to your class. Initiliaze and add data using the array of pointers. Demonstrate knowledge of the different ways to dereference pointers.
-3. Create a linked list, using the node struct to mimick the data below:
+3. Create an array of linked lists, using a given node struct, to mimick the data below:
+
+```C++
+struct Node
+{
+    int data;
+    Node * next;
+};
+```
+
 
 | Index | Data    |
 |:-----:|:-------:|
