@@ -128,7 +128,12 @@ struct Node
 | 4     | 9       |
 | 5     | 1       |
 
-Print out the data to the screen in the following format:
+Print out the data to the screen, using the function definition below, in the following format:
+
+```C++
+void print(Node *);
+```
+
 ```
 2 7
 3
