@@ -148,128 +148,109 @@ the license plate number, and whether or not the customer wants a premium wash.
 - Q: Empties out the list of checked in customers and quits the program.
 
 ### Example Output ###
-##### User Input is surrounded by [] ######
+##### User Input is surrounded by [ ] ######
 ```
-I) Check in  
-P) Print checked in customers  
-C) Change wash preference  
-O) Check out  
-Q) Quit  
-Input: [I]  
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [1]
 
 Name: [Oscar Olazabal]
 License Plate: [QWERTY1]
 Premium Wash? (y/n): [y]
 Customer checked in
 
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [I]
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [1]
 
 Name: [Charles Bucher]
 License Plate: [POIU123]
 Premium Wash? (y/n): [y]
 Customer checked in
 
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [I]
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [1]
 
 Name: [William Clemons]
 License Plate: [ASD12FD]
 Premium Wash? (y/n): [n]
 Customer checked in
 
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [P]
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [1]
 
-Name: William Clemons
-License Plate Number: ASD12FD
-Premium Wash: No
+Name: [Bill Nye]
+License Plate: [GHJ34LD]
+Premium Wash? (y/n): [n]
+Customer checked in
+
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [3]
+
+Name: [Oscar Olazabal]
+
+Customer not found.
+
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [2]
+
+Oscar Olazabal checked out.
+
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [3]
+
+Name: [Oscar Olazabal]
+
+Name: Oscar Olazabal
+License Plate Number: QWERTY1
+Premium Wash: Yes
+
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [2]
+
+Charles Bucher checked out.
+
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [3]
+
+Name: Charles Bucher
 
 Name: Charles Bucher
 License Plate Number: POIU123
 Premium Wash: Yes
 
-Name: Oscar Olazabal
-License Plate Number: QWERTY1
-Premium Wash: Yes
+1) Check in
+2) Check out
+3) Search
+4) Quit
+Input: [4]
 
-
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [C]
-
-License Plate: [QWERTY1]
-Premium wash? (y/n): [n]
-finishing deleteNode..
-Changed to regular wash
-
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [P]
-
-Name: William Clemons
-License Plate Number: ASD12FD
-Premium Wash: No
-
-Name: Charles Bucher
-License Plate Number: POIU123
-Premium Wash: Yes
-
-Name: Oscar Olazabal
-License Plate Number: QWERTY1
-Premium Wash: No
-
-
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [O]
-
-License Plate: [POIU123]
-finishing deleteNode..
-Customer removed
-
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [P]
-
-Name: William Clemons
-License Plate Number: ASD12FD
-Premium Wash: No
-
-Name: Oscar Olazabal
-License Plate Number: QWERTY1
-Premium Wash: No
-
-
-I) Check in
-P) Print checked in customers
-C) Change wash preference
-O) Check out
-Q) Quit
-Input: [Q]
-Press any key to continue . . .
+Checking out William Clemons
+Checking out Bill Nye
+Exiting program...
 ```
