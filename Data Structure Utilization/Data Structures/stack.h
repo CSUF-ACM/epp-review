@@ -5,10 +5,6 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include <iostream>
-
-using std::cout;
-
 
 template <typename E>
 class Stack;

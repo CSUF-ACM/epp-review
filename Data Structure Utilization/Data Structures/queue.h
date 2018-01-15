@@ -5,10 +5,6 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include <iostream>
-
-using std::cout;
-
 
 template <typename E>
 class Queue;
