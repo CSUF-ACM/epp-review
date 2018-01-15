@@ -1,154 +1,76 @@
-# Quick Notes #
-- A binary search tree is an example of a dictionary
-    - Find function:
-    given a key, will return a value
-    - Insert function:
-    given a value, will insert the value into the tree
-    - Erase:
-    given a value, will remove the value
-- Given a value, the value will be inserted at the end of the tree based on whether it is less 
-than or greater than the nodes already in the tree
-- If storing objects in the BST, make sure that the class has the <, >, ==, and << operators
-overloaded
-- Traversal types
-  - Preorder
-  
-       ![](http://ceadserv1.nku.edu/longa//classes/mat385_resources/docs/traversal_files/PreOrderTrav.gif)
+# Data Structures
 
-  - Inorder
+## Stack  
+- A stack is a container of objects that are inserted and removed according to the last-in first-out principle
+- Example: PEZ candy dispenser 
+### Visualization
+![stack](https://github.com/CSUF-ACM/acm-epp-review/blob/master/Data%20Structure%20Utilization/imgs/stack.gif)
+    
+## Queue
+- A queue is a container of elements that are inserted and removed according to the first-in-first-out principle.
+- Example: A line of people waiting to get on an amusement park ride.
+### Visualization
+![queue](https://github.com/CSUF-ACM/acm-epp-review/blob/master/Data%20Structure%20Utilization/imgs/queue.gif)
 
-       ![](http://ceadserv1.nku.edu/longa//classes/mat385_resources/docs/traversal_files/InorderTrav.gif)
+## Binary Search Tree
+- A tree is an abstract data type that stores elements hierarchically.
+- Example: A filesystem in most operating systems.
+### Visualization
+![bst](https://github.com/CSUF-ACM/acm-epp-review/blob/master/Data%20Structure%20Utilization/imgs/bst.gif)
 
-  - Postorder
+Visit https://visualgo.net/en/ for a visual representation of data structures 
 
-       ![](http://ceadserv1.nku.edu/longa//classes/mat385_resources/docs/traversal_files/PostorderTrav.gif)
+----
 
-Source: http://ceadserv1.nku.edu/longa//classes/mat385_resources/docs/traversal.htm
+# Member Functions
+## Stack
+Name | Task
+-----|-----
+size | Return size
+is_empty | Test whether container is empty
+top | Access next element
+push | Insert element
+pop | Remove top element
 
-- - - -
-- - - -
+## Queue
+Name | Task
+-----|-----
+size | Return size
+is_empty | Test whether container is empty
+front | Access next element
+back | Access last element
+enqueue | Insert element
+dequeue | Remove next element
 
-# BST Example #
+## Binary Search Tree
+Name | Task
+-----|-----
+size | Return size
+is_empty | Test whether container is empty
+retrieve | Access an element
+insert | Insert element
+remove | Remove an element
+remove_all | Remove all elements
+print | Print all elements
 
-### See "BinarySearchTree.h" and "TreeNode.h" ###
-#### Node Class for BST ####
-```C++
-// Node Class's methods
-template< class ItemType > class Tree;  // forward declarations
+# Practice Question
 
-template<class ItemType>
-class TreeNode {
-   friend class Tree< ItemType >; // make Tree a friend
- 
-public:
-   TreeNode( const ItemType & );  // constructor
-   TreeNode();
-   ItemType getInfo() const;      // return data in the node
-private:
-   ItemType info;                 
-   TreeNode< ItemType > *leftPtr; 
-   TreeNode< ItemType > *rightPtr;
-};
-```
+#### Using the provided files under the [Practice Questions Files](https://github.com/CSUF-ACM/acm-epp-review/tree/master/Data%20Structure%20Utilization/Practice%20Question%20Files) folder, create a program that checks in and out customers at a car wash.
 
-#### Tree Class for BST ####
-```C++
-// Tree class's public methods
-enum TraversalOrderType {preorder, inorder, postorder};  
+## Specifics
+Upon running the program, the user will be greeted with a menu with the following functions:
 
-template< class ItemType >
-class Tree {
-public:
-   Tree();      // constructor
-   ~Tree();     // destructor
+- __Check in:__ Checks in the customer. The user will be asked to insert the name of the customer, the license plate number, and whether or not the customer wants a premium wash.
+- __Check out:__ Checks out the next customer. A notification stating which customer has been checked out will be displayed. Checked out customers will be stored in a history database.
+- __Search:__ Searches the history database for a customer. The customer's details will be printed.
+- __Quit:__ Checks out the remaining customers, erases the history, and exits the program.
 
-   // Inserts a copy of Item. Returns false if it already exist in tree, else true.
-   bool insert( const ItemType & );
+Use the appropriate data structures. The data structures can be found under the [Data Structures](https://github.com/CSUF-ACM/acm-epp-review/tree/master/Data%20Structure%20Utilization/Data%20Structures) folder.  
 
-   // Given an item, it retrieves it by settings the reference of the second item
-   // equal to the found item. Returns true if found, else false
-   bool retrieve( const ItemType &, ItemType & );
+Utilize the [customer.h](https://github.com/CSUF-ACM/acm-epp-review/blob/master/Data%20Structure%20Utilization/Practice%20Question%20Files/customer.h) header file to create customer objects. Traits of customers include their name, license plate number, and their wash preference.
 
-   // Given an item, if it find a match of that item in the tree it will remove it.
-   // Returns true if item is found, else false
-   bool deleteInfo( const ItemType & );
-
-   // Returns true if tree is empty, else false
-   bool isEmpty() const;
-
-   // Makes the tree empty
-   void makeEmpty();
-
-   // Prints the tree in the order specified
-   void print(ostream & Outstream, TraversalOrderType order );   
-
-private:
-
-   // . . .
-
-};
-```
-
-#### Using the BST ####
-```C++
-Tree<int> intTree;	// Creates an empty BST of data type int
-
-if (intTree.insert(1))	// inserts 1 into intTree
-	cout << 1 << " successfully inserted.\n";		
-else
-	cout << "failed to insert " << 1 << endl;
-
-if (intTree.insert(2))	// inserts 2 into intTree
-	cout << 2 << " successfully inserted.\n";
-else
-	cout << "failed to insert " << 2 << endl;
-
-cout << "Values:\n";
-intTree.print(cout, inorder);   // Prints the values in the tree inorder
-
-int retrievedNumber;
-
-if (intTree.retrieve(1, retrievedNumber))	// recievedNumber is assigned the value if it exists in the tree
-	cout << retrievedNumber << " retrieved.\n";	
-else
-	cout << "Value does not exist.\n";	
-
-if (intTree.deleteInfo(1))	// finds and deleted 1 from the tree if it is found
-	cout << 1 << " deleted from tree.\n";
-else
-	cout << 1 << " not found.\n";
-
-if (intTree.isEmpty())	// Checks if tree is empty
-	cout << "Tree is empty.\n";
-else
-	cout << "Tree is not empty.\n";
-
-intTree.makeEmpty();	// Empties intTree
-```
-
-- - - -
-- - - -
-
-# Practice Question #
-
-Use the "Tree.h", "TreeNode.h", and "Customer.h" files for this question.
-
-Create a program that stores data for a car wash. Upon running the program, the user
-will be greeted with a menu with the following options:
-
-- I: Checks in the customer. The user will be asked to insert the name of the customer,
-the license plate number, and whether or not the customer wants a premium wash.
-
-- P: Print the list of checked in customers.
-
-- C: Searches for a customer in the tree and changes whether they want the premium wash or not.
-
-- O: Checks out a customer using their license plate number (delete from tree)
-
-- Q: Empties out the list of checked in customers and quits the program.
-
-### Example Output ###
-##### User Input is surrounded by [ ] ######
+### Example Output
+##### User Input is surrounded by [ ]
 ```
 1) Check in
 2) Check out
@@ -238,7 +160,7 @@ Charles Bucher checked out.
 4) Quit
 Input: [3]
 
-Name: Charles Bucher
+Name: [Charles Bucher]
 
 Name: Charles Bucher
 License Plate Number: POIU123
