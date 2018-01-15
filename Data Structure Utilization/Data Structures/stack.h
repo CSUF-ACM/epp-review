@@ -27,6 +27,7 @@ class Stack {
 public:
     Stack();
     ~Stack();
+    int size();
     bool is_empty();
     bool push(const E &);
     bool pop();
@@ -48,6 +49,11 @@ template <typename E>
 Stack<E>::~Stack() {
     while (!is_empty())
         pop();
+}
+
+template <typename E>
+int Stack<E>::size() {
+    return num_of_nodes_;
 }
 
 template <typename E>

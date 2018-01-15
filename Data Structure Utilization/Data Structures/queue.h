@@ -28,6 +28,7 @@ class Queue {
 public:
     Queue();
     ~Queue();
+    int size();
     bool is_empty();
     bool dequeue();
     bool enqueue(const E &);
@@ -59,6 +60,11 @@ Queue<E>::~Queue() {
         dequeue();
     delete header_;
     delete trailer_;
+}
+
+template <typename E>
+int Queue<E>::size() {
+    return num_of_nodes_;
 }
 
 template <typename E>

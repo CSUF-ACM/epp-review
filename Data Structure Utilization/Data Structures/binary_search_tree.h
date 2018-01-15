@@ -32,6 +32,7 @@ class BinarySearchTree {
 public:
     BinarySearchTree();
     ~BinarySearchTree();
+    int size();
     bool is_empty();
     bool insert(const E &);
     bool remove(const E &);
@@ -67,6 +68,11 @@ BinarySearchTree<E>::BinarySearchTree() {
 template <typename E>
 BinarySearchTree<E>::~BinarySearchTree() {
     remove_all_helper(root_);
+}
+
+template <typename E>
+int BinarySearchTree<E>::size() {
+    return num_of_nodes_;
 }
 
 template <typename E>
