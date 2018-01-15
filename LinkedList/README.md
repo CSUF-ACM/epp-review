@@ -15,23 +15,21 @@
 
 ```C++
 struct Node {
-	int data;		// data
-	Node* next;	// pointer to the next node in list
+    int data;
+    Node* next;  // Pointer to the next node in list.
 };
 
 void insertFront(Node* &head, int element) {
-	Node* newNode = new Node;	// allocates a new node.
-	newNode->data = element;	// assigns a value for data in newNode.
-	newNode->next = head;		// the node head points to is now the node that 
-// comes after newNode.
-	head = newNode;			// newNode is now the head.
+    Node* newNode = new Node;   // Allocates a new node.
+    newNode->data = element;    // Assigns a value for data in newNode.
+    newNode->next = head;       // The node head points to is now the node that 
+                                // comes after newNode.
+    head = newNode;             // NewNode is now the head.
 }
 
 int main() {
-
-	Node *head = NULL;			// creates a pointer to the front of the list
-	insertFront(head, 8);		// inserts 8 at the front of the list
-
+    Node *head = NULL;          // Creates a pointer to the front of the list.
+    insertFront(head, 8);       // Inserts 8 at the front of the list.
 }
 
 ```
