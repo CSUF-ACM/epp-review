@@ -5,7 +5,6 @@
 #ifndef BINARY_SEARCH_TREE_H
 #define BINARY_SEARCH_TREE_H
 
-#include <stdexcept>
 #include <iostream>
 
 using std::cout;
