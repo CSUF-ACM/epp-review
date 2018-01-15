@@ -69,6 +69,8 @@ Use the appropriate data structures. The data structures can be found under the 
 
 Utilize the [customer.h](https://github.com/CSUF-ACM/acm-epp-review/blob/master/Data%20Structure%20Utilization/Practice%20Question%20Files/customer.h) header file to create customer objects. Traits of customers include their name, license plate number, and their wash preference.
 
+Sample programs that utilize the three data structures have been provided. You can view them under the [Examples](https://github.com/CSUF-ACM/acm-epp-review/tree/master/Data%20Structure%20Utilization/Examples) folder. 
+
 ### Example Output
 ##### User Input is surrounded by [ ]
 ```
