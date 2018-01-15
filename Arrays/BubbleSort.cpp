@@ -1,30 +1,30 @@
 #include <iostream>
 using namespace std;
 
-void bubbleSort(int *, const int);
+void BubbleSort(int *, const int);
 
 int main() {
-	const int SIZE = 5;
-	int arr[SIZE] = { 6, 8, 3, 7, 1 };
+    const int kSize = 5;
+    int arr[kSize] = { 6, 8, 3, 7, 1 };
 
-	bubbleSort(arr, SIZE);
+    BubbleSort(arr, kSize);
 
-	for (int i = 0; i < SIZE; i++) {
-		cout << arr[i] << " ";
-	}
+    for (int i = 0; i < kSize; i++) {
+        cout << arr[i] << " ";
+    }
 
 }
 
-void bubbleSort(int *arr, const int SIZE) {
+void BubbleSort(int *arr, const int kSize) {
 
-	for (int i = SIZE; i > 0; i--) {		//loop a total of SIZE times
-		for (int j = 0; j < i - 1; j++) {		//loop through the array
-			if (arr[j] > arr[j + 1]) {				//if previous number is greater than next number
-				int temp = arr[j + 1];					//swap
-				arr[j + 1] = arr[j];
-				arr[j] = temp;
-			}
-		}
-	}
+    for (int i = kSize; i > 0; i--) {       // Loop a total of kSize times.
+        for (int j = 0; j < i - 1; j++) {   // Loop through the array.
+            if (arr[j] > arr[j + 1]) {      // If previous number is greater than next number
+                int temp = arr[j + 1];      // then swap.
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
 
 }
