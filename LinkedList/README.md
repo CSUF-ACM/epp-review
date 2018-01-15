@@ -36,9 +36,8 @@ int main() {
 
 ```
 
-Using the struct above, complete the following tasks. The insertFront function and function headers are provided.
+### Using the struct above, complete the following tasks. The insertFront function and function headers are provided.
   
-   
 1. Create a function that prints all of the elements in the list.
   
 ```C++
@@ -46,8 +45,7 @@ void printList(Node* &head) {
 
 }
 ```
-  
-    
+
 2. Create a function inserts an element at a given position. Position 0 represents the front of the list, 1 represents the following position, etc. No need to bound check; assume the user will always insert a valid position.
   
 ```C++
@@ -55,8 +53,7 @@ void insert(Node* &head, int element, int position ) {
 
 }
 ```
-  
-    
+ 
 3. Create a function that combines two lists into one. For example, if list A consists of 1, 2, 3, 4 and list B consists of 5, 6, 7, 8; after calling the function, list A should consists of 1, 2, 3, 4, 5, 6, 7, 8 and list B should contain nothing.
    
 ```C++
@@ -64,8 +61,7 @@ void combine(Node* &head1, Node* &head2) {
 
 }
 ```
-  
-    
+ 
 4. Create a function that deletes the whole list
   
 ```C++
