@@ -74,7 +74,9 @@ Index |  0  |  1  |  2  |  3  |  4  |  5  |  6
 Value |  4  |  6  |  1  |  -  |  -  |  -  |  -  
 
 - SIZE: 3
-  
+
+<br />
+<br />
 
 2. Create a function named "InsertMiddle". Its parameters are an array of integers, the size of the array, a second array of integers, and the size of the second array.
 
