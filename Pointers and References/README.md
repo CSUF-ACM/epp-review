@@ -75,7 +75,7 @@ int add2(int a)
 
 int myVar = 6;
 
-cout << add(myVar) << endl;  // This will print 12
+cout << add(myVar) << endl;  // This will print 8
 cout << myVar << endl;          // This will print a 6, as myVar was passed by value, not by reference
 ```
 
@@ -91,14 +91,14 @@ int add2(int * a) // Notice the argument requires a pointer to an int, not simpl
 int myVar = 6;
 
 
-cout << add2(&myVar) << endl;    // This will print 12
+cout << add2(&myVar) << endl;    // This will print 8
 ```
 >__Note:__   
 It may seem incorrect that add2(&myVar) works, as there wasn't a proper 'pointer' passed in as an argument. The reason this works anyways, is because of what a pointer is. A pointer stores a memory address of an object/variable. Thus, when a function requires a pointer (to an int, for example), you can pass in the memory address of an int, as the memory address of an int is exactly what an int * references`
 
 ```C++
 cout << myVar << endl;          
-// This will print a 12 as well, since myVar was passed by reference, and was manipulated within the function.
+// This will print a 8 as well, since myVar was passed by reference, and was manipulated within the function.
 ```
 
 ----
