@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Brief</title>
+    <meta name="description" content="">
+
+
+    <link rel="stylesheet" href="/epp-review/css/main.css">
+    <link rel="stylesheet" href="/epp-review/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/epp-review/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>Brief | ACM EPP Review</title>
+<meta property="og:title" content="Brief" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/epp-review/docs/data-structures/brief/" />
+<meta property="og:url" content="http://localhost:4000/epp-review/docs/data-structures/brief/" />
+<meta property="og:site_name" content="ACM EPP Review" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-23T02:29:22-07:00" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-08-23T02:29:22-07:00","dateModified":"2018-08-23T02:29:22-07:00","url":"http://localhost:4000/epp-review/docs/data-structures/brief/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/epp-review/docs/data-structures/brief/">
+    <link rel="alternate" type="application/rss+xml" title="ACM EPP Review" href="http://localhost:4000/epp-review/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/epp-review/">
+                <span><img src="/epp-review/img/logonav.png"></span> ACM EPP Review
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li  class="active" ><a href="/epp-review/docs/arrays/brief/">Problems</a></li>
+                <li ><a href="/epp-review/blog/2018/08/21/coming-soon/">Solutions</a></li>
+                <li><a href="http://acm.ecs.fullerton.edu/" target="_blank">Learn More About ACM</a></li>
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="text" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/CSUF-ACM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+          Arrays
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/arrays/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/arrays/odd-sum/">Odd Sum</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/arrays/combine/">Combine</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/arrays/remove-negatives/">Remove Negatives</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/arrays/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          Pointers and References
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/pointers-references/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/pointers-references/reference-parameters/">Passing by Reference</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/pointers-references/swap-pointers/">Pointer Swap</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/pointers-references/array-pointers/">Array of Pointers</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/pointers-references/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+          Linked List
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/print/">Print</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/insert/">Insert Node</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/delete/">Delete List</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/combine/">Combine Lists</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/copy/">Copy List</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/linked-list/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+          Recursion
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/print/">Print</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/sum/">Summation</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/count/">Count Values</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/exponentials/">Calculate Exponentials</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/recursion/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+          Data Structures
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item active" href="/epp-review/docs/data-structures/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/data-structures/car-wash/">Car Wash Program</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/data-structures/car-wash-files/">Car Wash Files</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/data-structures/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+          Files
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/brief/">Brief</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/read-write/">Read & Write</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/arrays/">Array Assignment</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/objects/">Reading and Writing Objects</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/odd-text/">Odd Text</a>
+        
+          
+          
+          <a class="list-group-item " href="/epp-review/docs/files/resources/">Resources</a>
+        
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Brief</h1>
+            <div id="markdown-content-container"><h3 id="basic-data-structures">Basic Data Structures</h3>
+<p>Data structures are methods of managing and storing data that enables efficient access and modification. There <a href="https://en.wikipedia.org/wiki/List_of_data_structures">hundreds</a> of data structures. We will be going over three popular data structures; the stack, queue, and binary search tree.</p>
+
+<h4 id="stack">Stack</h4>
+<div class="image">
+    <a href="/epp-review/img/stack.gif"><img src="/epp-review/img/stack.gif" class="center" /></a>
+</div>
+<center>Visit <a href="https://visualgo.net/en/stack">VisuAlgo</a> to help visualize stacks</center>
+
+<p>A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. This means that the last thing added to the stack is the first thing that gets removed. An example of a stack would be a PEZ dispenser.</p>
+
+<p>There are two principle operations to a stack:</p>
+<ul>
+  <li><strong>push</strong>, adds an element to the stack</li>
+  <li><strong>pop</strong>, removes the most recently added element</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="queue">Queue</h4>
+<div class="image">
+    <a href="/epp-review/img/queue.gif"><img src="/epp-review/img/queue.gif" class="center" /></a>
+</div>
+<center>Visit <a href="https://visualgo.net/en/queue">VisuAlgo</a> to help visualize queues</center>
+
+<p>A queue is a container of elements that are inserted and removed according to the first-in first-out principle (FIFO). The first element added to the queue will be the first one to be removed. An example of a queue would be a line of people waiting to get on an amusement park ride.</p>
+
+<p>There are two principle operations to a queue:</p>
+<ul>
+  <li><strong>enqueue</strong>, adds an element to the queue</li>
+  <li><strong>dequeue</strong>, removes the element that was added before all the other elements</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="binary-search-tree">Binary Search Tree</h4>
+<div class="image">
+    <a href="/epp-review/img/bst.gif"><img src="/epp-review/img/bst.gif" class="center" /></a>
+</div>
+<center>Visit <a href="https://visualgo.net/en/bst">VisuAlgo</a> to help visualize binary search trees</center>
+
+<p>A binary search tree is an abstract data type that stores elements hierarchically. They allow fast lookup, insertion, and deletion. They keep their keys stored in order, so that loopup and other operations can use the principle of binary search; they tranverse the tree from root to leaf making comparisons to keys stored in the nodes of the tree and deciding, on the basis of the comparison, to continue searching in the left or right subtrees.</p>
+
+<p>There are three principle operations to a binary search tree:</p>
+<ul>
+  <li><strong>searching</strong>, searches for a specific key</li>
+  <li><strong>insertion</strong>, searches for the appropriate location to insery the key, then inserts the key</li>
+  <li><strong>deletion</strong>, searches for the key and deletes it.</li>
+</ul>
+
+<h3 id="standard-template-library-stl">Standard Template Library (STL)</h3>
+<p>The C++ STL <a href="http://www.cplusplus.com/reference/stl/">provides mulitple containers</a> that can easily used. We will be going over the containers that resemeble stacks, queues, and binary search trees.</p>
+
+<h4 id="stl-stack">STL Stack</h4>
+<p>The STL Stack supports the following operations:</p>
+<table>
+  <tr>
+    <th>Member Function</th>
+    <th>Definition</th>
+  </tr>
+  <tr>
+    <td>empty</td>
+    <td>Test whether container is empty</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>Return size</td>
+  </tr>
+  <tr>
+    <td>top</td>
+    <td>Access the next element</td>
+  </tr>
+  <tr>
+    <td>push</td>
+    <td>Insert element</td>
+  </tr>
+  <tr>
+    <td>emplace</td>
+    <td>Construct and insert element</td>
+  </tr>
+  <tr>
+    <td>pop</td>
+    <td>Remove top element</td>
+  </tr>
+</table>
+
+<p>The code below shows the STL Stack in action.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlight language-c--" data-lang="c++"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span></code> declares a stack of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">s</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the stack, while <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the stack. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span></code> prints 4. To check if the stack is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
+
+<p><br /></p>
+
+<h4 id="stl-queue">STL Queue</h4>
+<p>The STL Queue supports the following operations:</p>
+<table>
+  <tr>
+    <th>Member Function</th>
+    <th>Definition</th>
+  </tr>
+  <tr>
+    <td>empty</td>
+    <td>Test whether container is empty</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>Return size</td>
+  </tr>
+  <tr>
+    <td>front</td>
+    <td>Access the next element</td>
+  </tr>
+  <tr>
+    <td>back</td>
+    <td>Access the last element</td>
+  </tr>
+  <tr>
+    <td>push</td>
+    <td>Insert element</td>
+  </tr>
+  <tr>
+    <td>emplace</td>
+    <td>Construct and insert element</td>
+  </tr>
+  <tr>
+    <td>pop</td>
+    <td>Remove top element</td>
+  </tr>
+</table>
+
+<p>The code below shows the STL Queue in action.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+    <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlight language-c--" data-lang="c++"><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span></code> declares a queue of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">q</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the queue, while <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the queue. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span></code> prints 8, while <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">()</span></code> prints 4. To check if the queue is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
+
+<p><br /></p>
+
+<h4 id="stl-map">STL Map</h4>
+<p>The STL Map supports the following operations:</p>
+<table>
+  <tr>
+    <th>Member Function</th>
+    <th>Definition</th>
+  </tr>
+  <tr>
+    <td>erase</td>
+    <td>Erase elements</td>
+  </tr>
+  <tr>
+    <td>clear</td>
+    <td>Clear content</td>
+  </tr>
+  <tr>
+    <td>find</td>
+    <td>Get iterator to element</td>
+  </tr>
+</table>
+
+<p>The code below shows the STL Map in action.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+#include &lt;map&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">age</span><span class="p">;</span>
+    <span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">];</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">];</span>
+    <span class="n">q</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">"tommy"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlight language-c--" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">age</span></code> declares a map with strings as keys and integers as values. <code class="highlight language-c--" data-lang="c++"><span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span></code> inserts the key, value pair “tommy” and 20 into the map, while <code class="highlight language-c--" data-lang="c++"><span class="n">age</span><span class="p">.</span><span class="n">erase</span><span class="p">()</span></code> removes the key, value pair from the map. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">]</span></code> prints 20, while <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">]</span></code> prints 21.</p>
+
+</div>
+            <p class="text-center">
+              <br />
+              <a target="_blank" href="https://github.com/CSUF-ACM/epp-review/blob/master/_docs/data-structures/brief.md" class="btn btn-default githubEditButton" role="button">
+                <i class="fa fa-pencil fa-lg"></i> Improve this page
+              </a>
+            </p>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/epp-review/docs/recursion/resources/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/epp-review/docs/data-structures/car-wash/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            ACM EPP Review 2018 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = '/epp-review'
+</script>
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/epp-review/js/bootstrap.min.js "></script>
+<script src="/epp-review/js/typeahead.bundle.min.js "></script>
+
+<script src="/epp-review/js/main.js "></script>
+
+</body>
+
+</html>

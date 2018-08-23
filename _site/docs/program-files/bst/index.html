@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>binary_search_tree.h</title>
+        <meta name="description" content="">
+    
+    
+        <link rel="stylesheet" href="/epp-review/css/program-files.css">
+        <link rel="stylesheet" href="/epp-review/css/font-awesome.min.css">
+    
+        <link rel="shortcut icon" href="/epp-review/favicon.ico?1">
+        <!-- Begin Jekyll SEO tag v2.2.2 -->
+<title>binary_search_tree.h | ACM EPP Review</title>
+<meta property="og:title" content="binary_search_tree.h" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/epp-review/docs/program-files/bst/" />
+<meta property="og:url" content="http://localhost:4000/epp-review/docs/program-files/bst/" />
+<meta property="og:site_name" content="ACM EPP Review" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-23T02:29:22-07:00" />
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebPage","headline":"binary_search_tree.h","datePublished":"2018-08-23T02:29:22-07:00","dateModified":"2018-08-23T02:29:22-07:00","url":"http://localhost:4000/epp-review/docs/program-files/bst/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+        <link rel="canonical" href="http://localhost:4000/epp-review/docs/program-files/bst/">
+        <link rel="alternate" type="application/rss+xml" title="ACM EPP Review" href="http://localhost:4000/epp-review/feed.xml" />
+    </head>
+    
+
+<body>
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+                <h1>binary_search_tree.h</h1>
+                
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#ifndef BINARY_SEARCH_TREE_H
+#define BINARY_SEARCH_TREE_H
+</span>
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+
+
+<span class="k">enum</span> <span class="n">traversal_order</span> <span class="p">{</span><span class="n">PREORDER</span><span class="p">,</span> <span class="n">INORDER</span><span class="p">,</span> <span class="n">POSTORDER</span><span class="p">};</span>
+
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="p">;</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BNode</span> <span class="p">{</span>
+    <span class="n">E</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">left</span><span class="p">;</span>
+    <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">right</span><span class="p">;</span>
+    <span class="k">friend</span> <span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="n">BNode</span><span class="p">()</span> <span class="o">:</span> <span class="n">left</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">),</span> <span class="n">right</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BinarySearchTree</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">BinarySearchTree</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">BinarySearchTree</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="n">is_empty</span><span class="p">();</span>
+    <span class="kt">bool</span> <span class="n">insert</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">remove</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">retrieve</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">E</span><span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">remove_all</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">print</span><span class="p">(</span><span class="n">traversal_order</span><span class="p">);</span>
+
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">root_</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num_of_nodes_</span><span class="p">;</span>
+
+    <span class="c1">// Helper functions to perform recursion.
+</span>    <span class="kt">int</span> <span class="n">height_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">insert_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">remove_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="n">remove_node</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">bool</span> <span class="n">retrieve_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">E</span> <span class="o">&amp;</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="n">print_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span><span class="p">,</span> <span class="n">traversal_order</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="n">remove_all_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="p">);</span>
+
+    <span class="kt">bool</span> <span class="n">is_leaf_node</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span><span class="p">);</span>      <span class="c1">// Check if node it a leaf node.
+</span>    <span class="kt">bool</span> <span class="n">only_one_child</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span><span class="p">);</span>    <span class="c1">// Check if node has only one child node.
+</span>    <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">get_min_ptr</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span><span class="p">);</span>  <span class="c1">// Find the pointer that points to the
+</span>                                       <span class="c1">// minimum value.
+</span><span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">BinarySearchTree</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">root_</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">num_of_nodes_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::~</span><span class="n">BinarySearchTree</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">remove_all_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">int</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">size</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">num_of_nodes_</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">is_empty</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Return true if tree is empty, else false.
+</span>    <span class="k">return</span> <span class="n">root_</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">insert</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Insert an element. Call to insert helper.
+</span>    <span class="k">return</span> <span class="n">insert_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">insert_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Recursively traverse until you reach a leaf node's child node (nullptr). Once
+</span>    <span class="c1">// reached, allocate a new node and replace the nullptr to point to that new node.
+</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Add new node to tree.
+</span>        <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">new_node</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">;</span>
+        <span class="n">new_node</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">kElement</span><span class="p">;</span>
+        <span class="n">ptr</span> <span class="o">=</span> <span class="n">new_node</span><span class="p">;</span>
+        <span class="n">num_of_nodes_</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Traverse
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">kElement</span> <span class="o">&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">insert_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">kElement</span> <span class="o">&gt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">insert_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+    <span class="k">else</span> <span class="c1">// if (kElement == ptr-&gt;data)
+</span>        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">remove</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Remove an element. Call to remove helper.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">is_empty</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">remove_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">remove_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Traverse ptr to the node that needs to be deleted.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">==</span> <span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">num_of_nodes_</span><span class="o">--</span><span class="p">;</span>
+        <span class="n">remove_node</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">kElement</span> <span class="o">&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">remove_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+    <span class="k">else</span> <span class="c1">// if (kElement &gt; ptr-&gt;data)
+</span>        <span class="k">return</span> <span class="n">remove_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">kElement</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">remove_node</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Remove node that the passed in pointer points to. There are three cases
+</span>    <span class="c1">// that have to be taken cared of: The node that needs to be removed (1) is
+</span>    <span class="c1">// a leaf node, (2) has only one child, or (3) has two child nodes.
+</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">is_leaf_node</span><span class="p">(</span><span class="n">ptr</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// If leaf node, just delete.
+</span>        <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+        <span class="n">ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">only_one_child</span><span class="p">(</span><span class="n">ptr</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// If node only has one child node then (depending on whether it is a right
+</span>        <span class="c1">// child or left child) set the pointer to point to the child node and
+</span>        <span class="c1">// delete the node that the pointer previously pointed to.
+</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Change ptr to point to its right child and delete the node that it
+</span>            <span class="c1">// previously pointed to.
+</span>            <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">to_remove</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+            <span class="k">delete</span> <span class="n">to_remove</span><span class="p">;</span>
+            <span class="n">to_remove</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Preform the same as above but with opposite child.
+</span>            <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">to_remove</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+            <span class="k">delete</span> <span class="n">to_remove</span><span class="p">;</span>
+            <span class="n">to_remove</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Case in which there are two children.
+</span>    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Find the minimum value of the subtree with ptr-&gt;right as root, then
+</span>        <span class="c1">// replace ptr's data with the minimum value. Finally, delete the node that
+</span>        <span class="c1">// originally had the minimum value.
+</span>        <span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">min</span> <span class="o">=</span> <span class="n">get_min_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+        <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">min</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">remove_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">min</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">is_leaf_node</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Check if passed in pointer points to a leaf node.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">only_one_child</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Check if passed in pointer points to a node with only one child.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">get_min_ptr</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Traverse the passed in pointer to the minimum value of the tree/subtree.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">get_min_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">retrieve</span><span class="p">(</span><span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">,</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">retrieved_element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Retrieve the node's data that matches kElement. Call to retrieve_helper.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">is_empty</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">retrieve_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">,</span> <span class="n">kElement</span><span class="p">,</span> <span class="n">retrieved_element</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">retrieve_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="k">const</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">kElement</span><span class="p">,</span> <span class="n">E</span> <span class="o">&amp;</span><span class="n">retrieved_element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Traverse to the node the matches kElement. Returns that value.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">==</span> <span class="n">kElement</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">retrieved_element</span> <span class="o">=</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">kElement</span> <span class="o">&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">retrieve_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">kElement</span><span class="p">,</span> <span class="n">retrieved_element</span><span class="p">);</span>
+    <span class="k">else</span> <span class="c1">// if (kElement &gt; ptr-&gt;data)
+</span>        <span class="k">return</span> <span class="n">retrieve_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">kElement</span><span class="p">,</span> <span class="n">retrieved_element</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">remove_all</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Remove all nodes from tree. Call to remove_helper.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">is_empty</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">remove_all_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">remove_all_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Traverse the tree in POSTORDER order and removes the nodes one at a time.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">remove_all_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+    <span class="n">remove_all_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+    <span class="n">ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">num_of_nodes_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">print</span><span class="p">(</span><span class="n">traversal_order</span> <span class="n">order</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Print values in the tree in the given order (preorder, inorder, or postorder).
+</span>    <span class="n">print_helper</span><span class="p">(</span><span class="n">root_</span><span class="p">,</span> <span class="n">order</span><span class="p">);</span>
+    <span class="n">cout</span><span class="p">.</span><span class="n">flush</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">BinarySearchTree</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;::</span><span class="n">print_helper</span><span class="p">(</span><span class="n">BNode</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">traversal_order</span> <span class="n">order</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Perform preorder, inorder, or postorder traversal.
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="n">PREORDER</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">PREORDER</span><span class="p">);</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">PREORDER</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="n">INORDER</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">INORDER</span><span class="p">);</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">INORDER</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="n">POSTORDER</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">POSTORDER</span><span class="p">);</span>
+        <span class="n">print_helper</span><span class="p">(</span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">POSTORDER</span><span class="p">);</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">#endif</span></code></pre></figure>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            ACM EPP Review 2018 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = '/epp-review'
+</script>
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/epp-review/js/bootstrap.min.js "></script>
+<script src="/epp-review/js/typeahead.bundle.min.js "></script>
+
+<script src="/epp-review/js/main.js "></script>
+
+</body>
+
+</html>
+

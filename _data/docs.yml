@@ -1,0 +1,50 @@
+- title: Arrays
+  docs:
+  - arrays/brief
+  - arrays/odd-sum
+  - arrays/combine
+  - arrays/remove-negatives
+  - arrays/resources
+
+- title: Pointers and References
+  docs:
+  - pointers-references/brief
+  - pointers-references/reference-parameters
+  - pointers-references/swap-pointers
+  - pointers-references/array-pointers
+  - pointers-references/resources
+
+- title: Linked List
+  docs:
+  - linked-list/brief
+  - linked-list/print
+  - linked-list/insert
+  - linked-list/delete
+  - linked-list/combine
+  - linked-list/copy
+  - linked-list/resources
+
+- title: Recursion
+  docs:
+  - recursion/brief
+  - recursion/print
+  - recursion/sum
+  - recursion/count
+  - recursion/exponentials
+  - recursion/resources
+
+- title: Data Structures
+  docs:
+  - data-structures/brief
+  - data-structures/car-wash
+  - data-structures/car-wash-files
+  - data-structures/resources
+
+- title: Files
+  docs:
+  - files/brief
+  - files/read-write
+  - files/arrays
+  - files/objects
+  - files/odd-text
+  - files/resources

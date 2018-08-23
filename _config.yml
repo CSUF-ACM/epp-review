@@ -1,0 +1,59 @@
+# Site settings
+title: ACM EPP Review
+email: acmcsufullerton@gmail.com
+description: >
+  EPP Review Questions
+  A set of review questions to assist you in preparing for the EPP!
+
+baseurl: "/epp-review" # the subpath of your site, e.g. /blog/
+url: https://CSUF-ACM.github.io/epp-review # the base hostname & protocol for your site
+git_address: https://github.com/CSUF-ACM
+git_edit_address: https://github.com/CSUF-ACM/epp-review/blob/master
+
+# theme options from https://bootswatch.com/
+# comment out this to use default Bootstrap
+bootwatch: paper
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+
+timezone: America/Los_Angeles
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
+
+excerpt_separator: ""   # Workaround for https://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed/
