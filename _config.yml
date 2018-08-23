@@ -2,13 +2,15 @@
 title: ACM EPP Review
 email: acmcsufullerton@gmail.com
 description: >
-  EPP Review Questions
   A set of review questions to assist you in preparing for the EPP!
 
 baseurl: "/epp-review" # the subpath of your site, e.g. /blog/
 url: https://CSUF-ACM.github.io/epp-review # the base hostname & protocol for your site
 git_address: https://github.com/CSUF-ACM
 git_edit_address: https://github.com/CSUF-ACM/epp-review/blob/master
+
+source: src
+destination: docs
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
