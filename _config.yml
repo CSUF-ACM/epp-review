@@ -7,7 +7,7 @@ description: >
 baseurl: "/epp-review" # the subpath of your site, e.g. /blog/
 url: https://CSUF-ACM.github.io/epp-review # the base hostname & protocol for your site
 git_address: https://github.com/CSUF-ACM
-git_edit_address: https://github.com/CSUF-ACM/epp-review/blob/master
+git_edit_address: https://github.com/CSUF-ACM/epp-review/blob/master/src
 
 source: src
 destination: docs
