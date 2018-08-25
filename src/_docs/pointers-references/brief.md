@@ -52,14 +52,15 @@ The line {% ihighlight c++ %}cout << myVariable << endl{% endihighlight %} will 
 A reference can be thought of as a joint clone to another variable or object and is denoted by {% ihighlight c++ %}&{% endihighlight %}
 
 {% highlight c++ %}
-int & myReference;
+int aNumber = 10;
+int & myReference = aNumber;
 {% endhighlight %}
 
-The code above created a reference to an int called {% ihighlight c++ %}myReference{% endihighlight %}. The object or variable that a reference references, can have it's data directly manipulated without needing to dereference.
+The code above created a reference to an int called {% ihighlight c++ %}myReference{% endihighlight %} and initialize it to aNumber. The object or variable that a reference references, can have it's data directly manipulated without needing to dereference. Note: a reference must be initialized when it is declared, otherwise it will not compile.
 
 {% highlight c++ %}
 int myVariable;
-myReference = myVariables;
+int & myReference = myVariables;
 
 myReference = 3;
 cout << myVariable << endl;
