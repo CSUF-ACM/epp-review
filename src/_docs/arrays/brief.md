@@ -4,9 +4,9 @@ permalink: /docs/arrays/brief/
 ---
 
 ### Array Basics
-An array is a collection of elements of the same data type placed in a contiguouse block of memory. Each element in the array can be referenced by it's index. An array's index has the range of 0 to N-1; where N is the number of elements the array can hold.  
+An array is a collection of elements of the same data type placed in a contiguous block of memory. Each element in the array can be referenced by its index. An array's index has the range of 0 to N-1, where N is the number of elements the array can hold.  
 
-It is important to note that an array's capacity is a constant; it cannot be made larger or smaller. If one wishes to store more data than an array can hold; one would have to allocate a larger array and copy the contents of the smaller array into the larger one.  
+It is important to note that an array's capacity is a constant; it cannot be made larger or smaller. If one wishes to store more data than an array can hold, one would have to allocate a larger array and copy the contents of the smaller array into the larger one.  
 
 Let's take a look at the example below.
 
@@ -18,7 +18,7 @@ m[2] = 4;
 cout << f[m[2]];
 {% endhighlight %}
 
-The lines {% ihighlight c++ %}double f[5]{% endihighlight %} and {% ihighlight c++ %}int m[10]{% endihighlight %}, respectively, allocate an array of floating point numbers who's capacity is 5 and an array of integers who's capacity is 10.
+The lines {% ihighlight c++ %}double f[5]{% endihighlight %} and {% ihighlight c++ %}int m[10]{% endihighlight %}, respectively, allocate an array of floating point numbers whose capacity is 5 and an array of integers whose capacity is 10.
 
 We then assign 2.5 to the fourth element of the array {% ihighlight c++ %}f{% endihighlight %} and 4 to the second element of the {% ihighlight c++ %}m{% endihighlight %}. The resulting arrays are:  
 
@@ -135,7 +135,7 @@ The resulting arrays look like this:
 ---
 
 ### Bubble Sort 
-As a warm up lets take a look at the bubble sort algorithm and walk through it line-by-line.
+As a warm up let's take a look at the bubble sort algorithm and walk through it line-by-line.
 
 {% highlight c++ %}
 void BubbleSort(int *arr, const int kSize) {

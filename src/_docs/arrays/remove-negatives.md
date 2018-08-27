@@ -35,7 +35,7 @@ The function must remove all negative values in the array, modify the value of s
     <td>-5</td>
   </tr>
 </table>
-- SIZE: 10
+- SIZE: 7
 
 #### After:
 <table>

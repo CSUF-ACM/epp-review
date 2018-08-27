@@ -11,9 +11,9 @@ void combine(int arr1[], int &size1, int arr2[], int size2) {
 }
 {% endhighlight %}
 
-This function will insert the contents of array 2 in the middle of the contents of array 1 and will update the value of the size variable. It is safe to assume that array 1's capacity is large enough to hold the contents of array 1 + the contents of array 2.
+This function will insert the contents of array 2 into the middle of the contents of array 1 and will update the value of the size variable. It is safe to assume that array 1's capacity is large enough to hold the contents of array 1 + the contents of array 2.
 
-Below is an example of how array 1 should look like before and after the function call. Note that array 1 is initialized with a capacity of 10, but the size variable is set to 6 because we are only using 6 indicies initially. The remaining indicies are put to use when combining the arrays.
+Below is an example of how array 1 should look like before and after the function call. Note that array 1 is initialized with a capacity of 10, but the size variable is set to 6 because we are only using 6 indices initially. The remaining indices are put to use when combining the arrays.
 
 ---
 

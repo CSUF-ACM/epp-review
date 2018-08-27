@@ -26,7 +26,7 @@ The line {% ihighlight c++ %}MyClass * classPointer = new MyClass(){% endihighli
 
 To dereference a pointer (to access the variable referenced by your pointer) simply put an {% ihighlight c++ %}*{% endihighlight %} next to the pointer.  
 
-When working with classes or structs,to reference members or methods, you have two options:
+When working with classes or structs to reference members or methods, you have two options:
 1. {% ihighlight c++ %}(*myPointer).method{% endihighlight %}
 2. {% ihighlight c++ %}myPointer->method{% endihighlight %}
 
@@ -78,7 +78,7 @@ _Not as commonly used as pointers (are unique to C++)._
     <a href="{{ "/img/value-reference.gif" | prepend: site.baseurl }}"><img src="{{ "/img/value-reference.gif" | prepend: site.baseurl }}" class="center"></a>
 </div>
 
-Most simple function calls pass arguments by value. This means that when a function is called, it copies the value of the variable pass in, and never changes the value of the variable passed in itself.
+Most simple function calls pass arguments by value. This means that when a function is called, it copies the value of the variable passed in, and never changes the value of the variable passed in itself.
 
 {% highlight c++ %}
 int add(int a)
@@ -95,7 +95,7 @@ cout << myVar << endl;
 
 The lines {% ihighlight c++ %}cout << add(myVar) << endl{% endihighlight %} and {% ihighlight c++ %}cout << myVar << endl{% endihighlight %} print 8 and 6 respectively. {% ihighlight c++ %}myVar{% endihighlight %} ends up being 6 because it was not passed by reference.
 
-If a function has an argument by reference, it means it takes the address of the variable passed in, and the function now has the ability to manipulate the variable since it knows it's memory address'.
+If a function has an argument by reference, it means it takes the address of the variable passed in, and the function now has the ability to manipulate the variable since it knows its memory address'.
 
 {% highlight c++ %}
 int add2(int &a)
