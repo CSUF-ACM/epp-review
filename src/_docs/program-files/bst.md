@@ -2,6 +2,7 @@
 layout: file
 title:  "binary_search_tree.h"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/binary_search_tree.h%}" download="binary_search_tree.h" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #ifndef BINARY_SEARCH_TREE_H

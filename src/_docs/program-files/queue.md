@@ -2,6 +2,7 @@
 layout: file
 title:  "queue.h"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/queue.h%}" download="queue.h" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #ifndef QUEUE_H

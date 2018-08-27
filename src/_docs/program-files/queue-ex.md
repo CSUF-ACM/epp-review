@@ -2,6 +2,7 @@
 layout: file
 title:  "Queue Example"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/queue_example.cpp%}" download="queue_example.cpp" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #include <iostream>

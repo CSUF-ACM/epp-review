@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://localhost:4000/epp-review/docs/pointers-references/brief/" />
 <meta property="og:site_name" content="ACM EPP Review" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-25T13:22:49-07:00" />
+<meta property="article:published_time" content="2018-08-26T22:06:05-07:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-08-25T13:22:49-07:00","dateModified":"2018-08-25T13:22:49-07:00","url":"http://localhost:4000/epp-review/docs/pointers-references/brief/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-08-26T22:06:05-07:00","dateModified":"2018-08-26T22:06:05-07:00","url":"http://localhost:4000/epp-review/docs/pointers-references/brief/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -62,7 +62,7 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li><a href="https://github.com/CSUF-ACM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://github.com/CSUF-ACM/epp-review/tree/master/src" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -324,7 +324,7 @@
 
 <p>To dereference a pointer (to access the variable referenced by your pointer) simply put an <code class="highlight language-c--" data-lang="c++"><span class="o">*</span></code> next to the pointer.</p>
 
-<p>When working with classes or structs,to reference members or methods, you have two options:</p>
+<p>When working with classes or structs to reference members or methods, you have two options:</p>
 <ol>
   <li><code class="highlight language-c--" data-lang="c++"><span class="p">(</span><span class="o">*</span><span class="n">myPointer</span><span class="p">).</span><span class="n">method</span></code></li>
   <li><code class="highlight language-c--" data-lang="c++"><span class="n">myPointer</span><span class="o">-&gt;</span><span class="n">method</span></code></li>
@@ -349,12 +349,13 @@
 <h3 id="references">References</h3>
 <p>A reference can be thought of as a joint clone to another variable or object and is denoted by <code class="highlight language-c--" data-lang="c++"><span class="o">&amp;</span></code></p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="o">&amp;</span> <span class="n">myReference</span><span class="p">;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">aNumber</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span> <span class="n">myReference</span> <span class="o">=</span> <span class="n">aNumber</span><span class="p">;</span></code></pre></figure>
 
-<p>The code above created a reference to an int called <code class="highlight language-c--" data-lang="c++"><span class="n">myReference</span></code>. The object or variable that a reference references, can have it’s data directly manipulated without needing to dereference.</p>
+<p>The code above created a reference to an int called <code class="highlight language-c--" data-lang="c++"><span class="n">myReference</span></code> and initialize it to aNumber. The object or variable that a reference references, can have it’s data directly manipulated without needing to dereference. Note: a reference must be initialized when it is declared, otherwise it will not compile.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">myVariable</span><span class="p">;</span>
-<span class="n">myReference</span> <span class="o">=</span> <span class="n">myVariables</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span> <span class="n">myReference</span> <span class="o">=</span> <span class="n">myVariables</span><span class="p">;</span>
 
 <span class="n">myReference</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myVariable</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
@@ -370,7 +371,7 @@
     <a href="/epp-review/img/value-reference.gif"><img src="/epp-review/img/value-reference.gif" class="center" /></a>
 </div>
 
-<p>Most simple function calls pass arguments by value. This means that when a function is called, it copies the value of the variable pass in, and never changes the value of the variable passed in itself.</p>
+<p>Most simple function calls pass arguments by value. This means that when a function is called, it copies the value of the variable passed in, and never changes the value of the variable passed in itself.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
 <span class="p">{</span>
@@ -385,7 +386,7 @@
 
 <p>The lines <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">myVar</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span></code> and <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myVar</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span></code> print 8 and 6 respectively. <code class="highlight language-c--" data-lang="c++"><span class="n">myVar</span></code> ends up being 6 because it was not passed by reference.</p>
 
-<p>If a function has an argument by reference, it means it takes the address of the variable passed in, and the function now has the ability to manipulate the variable since it knows it’s memory address’.</p>
+<p>If a function has an argument by reference, it means it takes the address of the variable passed in, and the function now has the ability to manipulate the variable since it knows its memory address’.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="nf">add2</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span>
 <span class="p">{</span>

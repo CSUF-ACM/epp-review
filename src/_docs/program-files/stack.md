@@ -2,6 +2,7 @@
 layout: file
 title:  "stack.h"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/stack.h %}" download="stack.h" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #ifndef STACK_H

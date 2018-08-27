@@ -2,6 +2,7 @@
 layout: file
 title:  "customer.h"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/customer.h%}" download="customer.h" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #ifndef CUSTOMER_H

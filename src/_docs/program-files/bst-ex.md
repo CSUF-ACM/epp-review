@@ -3,6 +3,8 @@ layout: file
 title:  "Binary Search Tree Example"
 ---
 
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/binary_search_tree_example.cpp%}" download="binary_search_tree_example.cpp" class="btn btn-primary">Download</a>
+
 {% highlight c++ %}
 #include <iostream>
 #include "binary_search_tree.h"

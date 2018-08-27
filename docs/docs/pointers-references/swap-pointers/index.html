@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://localhost:4000/epp-review/docs/pointers-references/swap-pointers/" />
 <meta property="og:site_name" content="ACM EPP Review" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-25T13:22:49-07:00" />
+<meta property="article:published_time" content="2018-08-26T22:06:05-07:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Pointer Swap","datePublished":"2018-08-25T13:22:49-07:00","dateModified":"2018-08-25T13:22:49-07:00","url":"http://localhost:4000/epp-review/docs/pointers-references/swap-pointers/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Pointer Swap","datePublished":"2018-08-26T22:06:05-07:00","dateModified":"2018-08-26T22:06:05-07:00","url":"http://localhost:4000/epp-review/docs/pointers-references/swap-pointers/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -62,7 +62,7 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li><a href="https://github.com/CSUF-ACM" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://github.com/CSUF-ACM/epp-review/tree/master/src" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -305,11 +305,11 @@
 
         <div class="col-md-8">
             <h1>Pointer Swap</h1>
-            <div id="markdown-content-container"><p>Create a function named <code class="highlight language-c--" data-lang="c++"><span class="n">swapPointers</span></code> that takes in two integer pointers as parameters and swaps the addresses the pointers were assigned.</p>
+            <div id="markdown-content-container"><p>Create a function named <code class="highlight language-c--" data-lang="c++"><span class="n">swapPointers</span></code> that takes in two integer pointer references as arguments and swaps the addresses the pointers were assigned.</p>
 
 <p>Use the following incomplete function definition:</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="nf">swapPointers</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">ptr1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">ptr2</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="nf">swapPointers</span><span class="p">(</span><span class="kt">int</span> <span class="o">*&amp;</span><span class="n">ptr1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*&amp;</span><span class="n">ptr2</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...
 </span><span class="p">}</span></code></pre></figure>
 </div>

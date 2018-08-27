@@ -2,6 +2,7 @@
 layout: file
 title:  "main.cpp"
 ---
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/main.cpp%}" download="main.cpp" class="btn btn-primary">Download</a>
 
 {% highlight c++ %}
 #include <iostream>

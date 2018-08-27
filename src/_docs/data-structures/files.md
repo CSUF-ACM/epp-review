@@ -3,6 +3,8 @@ title: Car Wash Files
 permalink: /docs/data-structures/car-wash-files/
 ---
 
+<a href="{{ site.baseurl }}{% link _docs/program-files/downloads/files.zip%}" download="files.zip" class="btn btn-primary">Download All</a>
+
 ### Program Files
 - <a href="{{ site.baseurl }}{% link _docs/program-files/customer.md %}" target="_blank">customer.h</a>
 - <a href="{{ site.baseurl }}{% link _docs/program-files/main.md %}" target="_blank">main.cpp</a>
