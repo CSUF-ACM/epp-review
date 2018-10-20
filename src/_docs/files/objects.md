@@ -13,7 +13,7 @@ struct PetRock {
 };
 {% endhighlight %}
 
-When the program runs, it first checks to see if a file contains data (PetRocks), if it contains data then the data will be read into an array of size 3 and will be printed. If no data is contained within the file, three {% ihighlight c++ %}PetRock{% endihighlight %} instances will be created and written to the file.
+When the program runs, it first checks to see if a file contains data (PetRocks). If the file contains data then the data will be read from the file into an array of size 3 and will be printed (assume there will be no more than 3 objects saved in the data file). If no data is contained within the file, 3 {% ihighlight c++ %}PetRock{% endihighlight %} objects will be created and written to the file.
 
 ### Sample Output
 **First time executing the program**

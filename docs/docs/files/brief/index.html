@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://localhost:4000/epp-review/docs/files/brief/" />
 <meta property="og:site_name" content="ACM EPP Review" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-20T09:14:53-07:00" />
+<meta property="article:published_time" content="2018-10-20T10:10:59-07:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T09:14:53-07:00","dateModified":"2018-10-20T09:14:53-07:00","url":"http://localhost:4000/epp-review/docs/files/brief/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T10:10:59-07:00","dateModified":"2018-10-20T10:10:59-07:00","url":"http://localhost:4000/epp-review/docs/files/brief/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -305,10 +305,10 @@
         <div class="col-md-8">
             <h1>Brief</h1>
             <div id="markdown-content-container"><h3 id="file-basics">File Basics</h3>
-<p>C++ provides the <code class="highlight language-c--" data-lang="c++"><span class="n">ofstream</span></code> library to perform output and input of characters to/from files. The library presents us with two objects</p>
+<p>C++ provides the <code class="highlight language-c--" data-lang="c++"><span class="n">fstream</span></code> (file stream) library to perform output and input of characters to/from files. The library presents us with two objects:</p>
 <ul>
-  <li><strong>ofstream</strong>: Stream class to write on files</li>
-  <li><strong>ifstream</strong>: Stream class to read from files</li>
+  <li><strong>ofstream</strong>: Stream class to write to files (output file stream)</li>
+  <li><strong>ifstream</strong>: Stream class to read from files (input file stream)</li>
 </ul>
 
 <p>To create <code class="highlight language-c--" data-lang="c++"><span class="n">ifstream</span></code> objects and <code class="highlight language-c--" data-lang="c++"><span class="n">ofstream</span></code> objects we write the following code:</p>
@@ -342,21 +342,22 @@
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
 #include &lt;fstream&gt;
-</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">ifstream</span> <span class="n">inFile</span><span class="p">;</span>  <span class="c1">// For reading from a file
 </span>    <span class="n">ofstream</span> <span class="n">outFile</span><span class="p">;</span> <span class="c1">// For writing to a file
 </span>
     <span class="n">inFile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"myFile.txt"</span><span class="p">);</span>   <span class="c1">// Open file to read from it
 </span>    <span class="c1">// Read from file
-</span>    <span class="n">inFile</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>               <span class="c1">// Close the file
+</span>    <span class="n">inFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>              <span class="c1">// Close the file
 </span>
     <span class="n">outFile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"myFile.txt"</span><span class="p">);</span>  <span class="c1">// Open file to write to it
 </span>    <span class="c1">// Write to file
-</span>    <span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">(</span>               <span class="c1">// Close the file
+</span>    <span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>             <span class="c1">// Close the file
 </span><span class="p">}</span></code></pre></figure>
 
-<p>When one does not want to access data that is past the end of the file, use <code class="highlight language-c--" data-lang="c++"><span class="n">fileStreamObject</span><span class="p">.</span><span class="n">eof</span><span class="p">()</span></code></p>
+<p>When one does not want to access data that is past the end of the file, use <code class="highlight language-c--" data-lang="c++"><span class="n">inFile</span><span class="p">.</span><span class="n">eof</span><span class="p">()</span></code> which returns a boolean representing whether the end of the file has been reached.</p>
 
 <h3 id="writing-to-files">Writing to Files</h3>
 <p>With an <code class="highlight language-c--" data-lang="c++"><span class="n">ofstream</span></code> object, you are able to write to files.</p>
@@ -370,10 +371,10 @@
     <span class="c1">// Open the file
 </span>    <span class="n">ofstream</span> <span class="n">outFile</span><span class="p">;</span>
     <span class="n">outFile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"myFile.txt"</span><span class="p">);</span>
-    
+
     <span class="kt">double</span> <span class="n">doubleNum</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">intNum</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-    
+
     <span class="c1">// Write the values to the file
 </span>    <span class="n">outFile</span> <span class="o">&lt;&lt;</span> <span class="n">doubleNum</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">intNum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 
@@ -384,7 +385,7 @@
     <span class="n">outFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The code above opens <code class="highlight language-c--" data-lang="c++"><span class="n">myFile</span><span class="p">.</span><span class="n">txt</span></code> using the ofstream object <code class="highlight language-c--" data-lang="c++"><span class="n">outFile</span></code>. It then writes the values of <code class="highlight language-c--" data-lang="c++"><span class="n">doubleNum</span></code> and <code class="highlight language-c--" data-lang="c++"><span class="n">intNum</span></code> into the file. Notice that between writing the values into the file, a whitespace is written. This is done so that the numbers are kept seperate and could be read back individually. Following the new line, a full sentence is then read into the file.</p>
+<p>The code above opens <code class="highlight language-c--" data-lang="c++"><span class="n">myFile</span><span class="p">.</span><span class="n">txt</span></code> using the <code class="highlight language-c--" data-lang="c++"><span class="n">ofstream</span></code> object <code class="highlight language-c--" data-lang="c++"><span class="n">outFile</span></code>. It then writes the values of <code class="highlight language-c--" data-lang="c++"><span class="n">doubleNum</span></code> and <code class="highlight language-c--" data-lang="c++"><span class="n">intNum</span></code> into the file. Notice that between writing the values into the file, a whitespace is written. This is done so that the numbers are kept separate and could be read back individually. Following the new line, a full sentence is then written to the file.</p>
 
 <h3 id="reading-from-files">Reading From Files</h3>
 <p>With an <code class="highlight language-c--" data-lang="c++"><span class="n">ifstream</span></code> object, you are able to read from files. There are multiple ways of approaching this:</p>
@@ -402,23 +403,24 @@
     <span class="kt">double</span> <span class="n">doubleNum</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">intNum</span><span class="p">;</span>
 
-    <span class="c1">// Read values from the file
+    <span class="c1">// Read from the file until we hit any white space (good for space-delimited data)
 </span>    <span class="n">inFile</span> <span class="o">&gt;&gt;</span> <span class="n">doubleNum</span> <span class="o">&gt;&gt;</span> <span class="n">intNum</span><span class="p">;</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">doubleNum</span> <span class="o">+</span> <span class="n">intNum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 
-    <span class="c1">// Read sentence from the file
-</span>    <span class="n">string</span> <span class="n">sentence</span><span class="p">;</span>
-    <span class="n">inFile</span> <span class="o">&gt;&gt;</span> <span class="n">sentence</span><span class="p">;</span>
-    <span class="n">getline</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span> <span class="n">sentence</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">sentence</span><span class="p">;</span>
+
+    <span class="c1">// Read from inFile until we reach a '\n' (the whole sentence)
+</span>    <span class="n">getline</span><span class="p">(</span><span class="n">inFile</span><span class="p">,</span> <span class="n">sentence</span><span class="p">);</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sentence</span><span class="p">;</span>
 
-    <span class="n">inFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="c1">// Close the file when we're done
+</span>    <span class="n">inFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The code above opens <code class="highlight language-c--" data-lang="c++"><span class="n">myFile</span><span class="p">.</span><span class="n">txt</span></code> using the ifstream object <code class="highlight language-c--" data-lang="c++"><span class="n">inFile</span></code>. It then reads in the values 2 and 5 into <code class="highlight language-c--" data-lang="c++"><span class="n">doubleNum</span></code> and <code class="highlight language-c--" data-lang="c++"><span class="n">intNum</span></code> respectly. To read a line from the the file, the <code class="highlight language-c--" data-lang="c++"><span class="n">getline</span></code> function is used.</p>
+<p>The code above opens <code class="highlight language-c--" data-lang="c++"><span class="n">myFile</span><span class="p">.</span><span class="n">txt</span></code> using the ifstream object <code class="highlight language-c--" data-lang="c++"><span class="n">inFile</span></code>. It then reads in the values 2 and 5 into <code class="highlight language-c--" data-lang="c++"><span class="n">doubleNum</span></code> and <code class="highlight language-c--" data-lang="c++"><span class="n">intNum</span></code> respectively. To read a line from the the file, the <code class="highlight language-c--" data-lang="c++"><span class="n">getline</span><span class="p">()</span></code> function is used.</p>
 
-<h3 id="writing-and-reading-objects">Writing and Reading Objects</h3>
-<p>Applying what we learned above, we will read and write objects into and out of a file.</p>
+<h3 id="writing-and-reading-binary-objects">Writing and Reading Binary Objects</h3>
+<p>Applying what we learned above, we will read and write binary objects into and out of a file.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
 #include &lt;fstream&gt;
@@ -431,7 +433,8 @@
 <span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Person</span> <span class="n">p1</span><span class="p">;</span>
+    <span class="c1">// Declare &amp; initialize object
+</span>    <span class="n">Person</span> <span class="n">p1</span><span class="p">;</span>
     <span class="n">p1</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Tommy"</span><span class="p">;</span>
     <span class="n">p1</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
 
@@ -450,7 +453,7 @@
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">age</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>There are a few differences when dealing with objects. When you plan on writing an object to a file, you need to specify you will be appending to the file by including the <code class="highlight language-c--" data-lang="c++"><span class="n">ios</span><span class="o">::</span><span class="n">app</span></code> flag in the <code class="highlight language-c--" data-lang="c++"><span class="n">open</span></code> method. When writing, you will pass two parameters to the <code class="highlight language-c--" data-lang="c++"><span class="n">read</span></code> method: a character pointer to your object and the size of the object.</p>
+<p>There are a few differences when dealing with binary objects. When you plan on writing an object to a file, you need to specify you will be appending to the file by including the <code class="highlight language-c--" data-lang="c++"><span class="n">ios</span><span class="o">::</span><span class="n">app</span></code> flag in the <code class="highlight language-c--" data-lang="c++"><span class="n">open</span></code> method. When writing, you will pass two parameters to the <code class="highlight language-c--" data-lang="c++"><span class="n">read</span></code> method: a character pointer to your object and the size of the object.</p>
 </div>
             <p class="text-center">
               <br />
