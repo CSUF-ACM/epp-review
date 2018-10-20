@@ -3,7 +3,8 @@ title: Summation
 permalink: /docs/recursion/sum/
 ---
 
-Create two functions: one that can sum the values in a an array and another that can sum the values in a linked list.  
+Create two functions: one that can sum the values in a an array and another that can sum the values in a linked list.
+**Hint**: First, find and implement an appropriate base case for the function.
 
 Use the following incomplete function definitions:
 
@@ -16,7 +17,7 @@ int sumArray(int arr[], int n) {
 
 #### Linked List
 {% highlight c++ %}
-int sumList(Node *head) { 
+int sumList(Node *head) {
     // . . .
 }
 {% endhighlight %}

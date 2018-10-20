@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://localhost:4000/epp-review/docs/recursion/brief/" />
 <meta property="og:site_name" content="ACM EPP Review" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-20T10:10:59-07:00" />
+<meta property="article:published_time" content="2018-10-20T10:44:04-07:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T10:10:59-07:00","dateModified":"2018-10-20T10:10:59-07:00","url":"http://localhost:4000/epp-review/docs/recursion/brief/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T10:44:04-07:00","dateModified":"2018-10-20T10:44:04-07:00","url":"http://localhost:4000/epp-review/docs/recursion/brief/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -305,16 +305,16 @@
         <div class="col-md-8">
             <h1>Brief</h1>
             <div id="markdown-content-container"><h3 id="defining-recursion">Defining Recursion</h3>
-<p>In general, recursion is defined as the repeated application of a recursive procedure. In computer science, is a programming technique involving the use of a function that calls itself one or more times until a specific condition (commonly known as the base case) is met at which time the rest of each repeition is processed from the last one called to the first. Concretely, it is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.</p>
+<p>In general, recursion is defined as the repeated application of a recursive procedure. In computer science, it is a programming technique involving the use of <strong>a function that calls itself one or more times until a specific condition is met</strong> (commonly known as the base case). Concretely, it is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.</p>
 
 <h3 id="prototyping">Prototyping</h3>
-<p>A recursive function has one or more base cases and one or more recursive calls.</p>
+<p>A recursive function has one or more <em>base cases</em> and one or more <em>recursive calls</em>.</p>
 
-<p>A recursive call is a portion of the function that calls itself in order to get closer to solving the problem. Recursive calls are commonly terminated by a base case; when it has reached a wanted condition.</p>
+<p>A <strong>recursive call</strong> is a portion of the function that calls itself in order to get closer to solving the problem.</p>
 
-<p>A base case is a portion of the function that produces a result trivially. The base case is normally reached after a certain number of recursive calls.</p>
+<p>A <strong>base case</strong> is a condition which, if met, will cease further recursive calls.</p>
 
-<p>The following is represents a typical format for a recursive function:</p>
+<p>The following pseudocode represents a typical format for a recursive function:</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">foo</span><span class="p">(</span><span class="cm">/*params...*/</span><span class="p">)</span>
 <span class="p">{</span>
@@ -332,22 +332,23 @@
     <a href="/epp-review/img/factorial.gif"><img src="/epp-review/img/factorial.gif" class="center" /></a>
 </div>
 
-<p>A factorial is the product of an integer and all the integers below it. For example, factorial for (denoted as 4!) is equal to 4*3*2*1 = 24. The code below is a recursive function definition for calculating a factorial.</p>
+<p>A factorial is the product of an integer and all the integers below it. For example, factorial for 4 (denoted as 4!) is equal to 4*3*2*1 = 24. The code below is a recursive function definition for calculating a factorial.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Recursive call
-</span>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
     <span class="c1">// Base case
 </span>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>If one were to make the function call <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code>, the function would execute like the following:</p>
 <ol>
-  <li>First it calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 4, the <em>recursive case</em> is <strong>true</strong>. Therfore factorial(4) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">4</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> to finish the problem.</li>
-  <li>It then calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 3, the <em>recursive case</em> is <strong>true</strong>. Therfore factorial(3) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">3</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> to finish the problem.</li>
-  <li><code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> is then calculated. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 2, the <em>recursive case</em> is <strong>true</strong>. Therfore factorial(2) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">2</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> to finish the problem.</li>
-  <li>Finally, it calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 1, the <em>base case</em> is <strong>true</strong>. Therfore factorial(1) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">1</span></code>. We’ve reached an endpoint and are now able to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> completely to finish the problem.</li>
+  <li>First it calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 4, the <em>recursive case</em> is <strong>true</strong>. Therefore factorial(4) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">4</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> to finish the problem.</li>
+  <li>It then calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 3, the <em>recursive case</em> is <strong>true</strong>. Therefore factorial(3) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">3</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> to finish the problem.</li>
+  <li><code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> is then calculated. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 2, the <em>recursive case</em> is <strong>true</strong>. Therefore factorial(2) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">2</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code>. But now it needs to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> to finish the problem.</li>
+  <li>Finally, it calculates <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code>. Since <code class="highlight language-c--" data-lang="c++"><span class="n">n</span></code> = 1, the <em>base case</em> is <strong>true</strong>. Therefore factorial(1) equals <code class="highlight language-c--" data-lang="c++"><span class="mi">1</span></code>. We’ve reached an endpoint and are now able to calculate <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> completely to finish the problem.</li>
   <li>Since the value of <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> is 1, the calculation in step 3 for <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> can finish. <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> = 2*1 = 2.</li>
   <li>Now that it knows that the value of <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> is 2, the calculation in step 2 for <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> can finish. <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> = 3*2 = 6</li>
   <li>And finally, since <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> is 6, the calculation in step 1 for <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code> can finish. <code class="highlight language-c--" data-lang="c++"><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code> = 4*6 = 24.</li>
@@ -363,9 +364,11 @@
 <p>The code below is a recursive function definition for calculating the nth fibonacci number.</p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//Base case
-</span>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="c1">// Base case
+</span>    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
     <span class="c1">// Recursive call
 </span>    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
