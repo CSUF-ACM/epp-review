@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://localhost:4000/epp-review/docs/data-structures/brief/" />
 <meta property="og:site_name" content="ACM EPP Review" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-20T10:44:04-07:00" />
+<meta property="article:published_time" content="2018-10-20T11:22:25-07:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T10:44:04-07:00","dateModified":"2018-10-20T10:44:04-07:00","url":"http://localhost:4000/epp-review/docs/data-structures/brief/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Brief","datePublished":"2018-10-20T11:22:25-07:00","dateModified":"2018-10-20T11:22:25-07:00","url":"http://localhost:4000/epp-review/docs/data-structures/brief/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -305,7 +305,10 @@
         <div class="col-md-8">
             <h1>Brief</h1>
             <div id="markdown-content-container"><h3 id="basic-data-structures">Basic Data Structures</h3>
-<p>Data structures are methods of managing and storing data that enables efficient access and modification. There <a href="https://en.wikipedia.org/wiki/List_of_data_structures">hundreds</a> of data structures. We will be going over three popular data structures; the stack, queue, and binary search tree.</p>
+
+<p>Data structures are methods of managing and storing data that enables efficient access and modification. There are <a href="https://en.wikipedia.org/wiki/List_of_data_structures">hundreds</a> of different data structures.</p>
+
+<p>We will be going over three popular data structures: the <strong>stack</strong>, the <strong>queue</strong>, and the <strong>binary search tree</strong>.</p>
 
 <h4 id="stack">Stack</h4>
 <div class="image">
@@ -313,9 +316,10 @@
 </div>
 <center>Visit <a href="https://visualgo.net/en/stack">VisuAlgo</a> to help visualize stacks</center>
 
-<p>A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. This means that the last thing added to the stack is the first thing that gets removed. An example of a stack would be a PEZ dispenser.</p>
+<p>A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. This means that the last thing added to the stack is the first thing that gets removed. A real-world example of a stack would be a PEZ dispenser, or a stack of plates at a buffet.</p>
 
 <p>There are two principle operations to a stack:</p>
+
 <ul>
   <li><strong>push</strong>, adds an element to the stack</li>
   <li><strong>pop</strong>, removes the most recently added element</li>
@@ -324,68 +328,74 @@
 <p><br /></p>
 
 <h4 id="queue">Queue</h4>
+
 <div class="image">
     <a href="/epp-review/img/queue.gif"><img src="/epp-review/img/queue.gif" class="center" /></a>
 </div>
 <center>Visit <a href="https://visualgo.net/en/queue">VisuAlgo</a> to help visualize queues</center>
 
-<p>A queue is a container of elements that are inserted and removed according to the first-in first-out principle (FIFO). The first element added to the queue will be the first one to be removed. An example of a queue would be a line of people waiting to get on an amusement park ride.</p>
+<p>A queue is a container of elements that are inserted and removed according to the first-in first-out principle (FIFO). The first element added to the queue will be the first one to be removed. A real-world example of a queue would be a line of people waiting to get on an amusement park ride.</p>
 
 <p>There are two principle operations to a queue:</p>
+
 <ul>
-  <li><strong>enqueue</strong>, adds an element to the queue</li>
-  <li><strong>dequeue</strong>, removes the element that was added before all the other elements</li>
+  <li><strong>enqueue</strong>, adds an element to the back of the queue</li>
+  <li><strong>dequeue</strong>, removes an element from the front of the queue</li>
 </ul>
 
 <p><br /></p>
 
 <h4 id="binary-search-tree">Binary Search Tree</h4>
+
 <div class="image">
     <a href="/epp-review/img/bst.gif"><img src="/epp-review/img/bst.gif" class="center" /></a>
 </div>
 <center>Visit <a href="https://visualgo.net/en/bst">VisuAlgo</a> to help visualize binary search trees</center>
 
-<p>A binary search tree is an abstract data type that stores elements hierarchically. They allow fast lookup, insertion, and deletion. They keep their keys stored in order, so that loopup and other operations can use the principle of binary search; they tranverse the tree from root to leaf making comparisons to keys stored in the nodes of the tree and deciding, on the basis of the comparison, to continue searching in the left or right subtrees.</p>
+<p>A binary search tree is an abstract data type that stores elements hierarchically. They allow fast lookup, insertion, and deletion. They keep their keys stored in order, so that lookup and other operations can use the principle of binary search. They traverse the tree from root to leaf making comparisons to keys stored in the nodes of the tree and deciding, on the basis of the comparison, to continue searching in the left or right subtrees.</p>
 
 <p>There are three principle operations to a binary search tree:</p>
+
 <ul>
   <li><strong>searching</strong>, searches for a specific key</li>
-  <li><strong>insertion</strong>, searches for the appropriate location to insery the key, then inserts the key</li>
+  <li><strong>insertion</strong>, searches for the appropriate location to insert the key, then inserts the key</li>
   <li><strong>deletion</strong>, searches for the key and deletes it.</li>
 </ul>
 
 <h3 id="standard-template-library-stl">Standard Template Library (STL)</h3>
-<p>The C++ STL <a href="http://www.cplusplus.com/reference/stl/">provides mulitple containers</a> that can easily used. We will be going over the containers that resemeble stacks, queues, and binary search trees.</p>
+
+<p>The C++ STL <a href="http://www.cplusplus.com/reference/stl/">provides multiple containers</a> that can be easily used. We will be going over the containers that resemble stacks, queues, and binary search trees.</p>
 
 <h4 id="stl-stack">STL Stack</h4>
-<p>The STL Stack supports the following operations:</p>
+
+<p>The <a href="http://www.cplusplus.com/reference/stack/stack/" target="_blank">STL Stack</a> supports the following operations:</p>
 <table>
   <tr>
     <th>Member Function</th>
     <th>Definition</th>
   </tr>
   <tr>
-    <td>empty</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/empty/" target="_blank">empty()</a></td>
     <td>Test whether container is empty</td>
   </tr>
   <tr>
-    <td>size</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/size/" target="_blank">size()</a></td>
     <td>Return size</td>
   </tr>
   <tr>
-    <td>top</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/top/" target="_blank">top()</a></td>
     <td>Access the next element</td>
   </tr>
   <tr>
-    <td>push</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/push/" target="_blank">push()</a></td>
     <td>Insert element</td>
   </tr>
   <tr>
-    <td>emplace</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/emplace/" target="_blank">emplace()</a></td>
     <td>Construct and insert element</td>
   </tr>
   <tr>
-    <td>pop</td>
+    <td><a href="http://www.cplusplus.com/reference/stack/stack/pop/" target="_blank">pop()</a></td>
     <td>Remove top element</td>
   </tr>
 </table>
@@ -398,53 +408,54 @@
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myStack</span><span class="p">;</span>
+    <span class="n">myStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">myStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myStack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+    <span class="n">myStack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
-        <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">myStack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="n">myStack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlight language-c--" data-lang="c++"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span></code> declares a stack of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">s</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the stack, while <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the stack. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span></code> prints 4. To check if the stack is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
+<p><code class="highlight language-c--" data-lang="c++"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myStack</span></code> declares a stack of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">myStack</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">myStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the stack, while <code class="highlight language-c--" data-lang="c++"><span class="n">myStack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the stack. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myStack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span></code> prints 4. To check if the stack is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">myStack</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
 
 <p><br /></p>
 
 <h4 id="stl-queue">STL Queue</h4>
-<p>The STL Queue supports the following operations:</p>
+
+<p>The <a href="http://www.cplusplus.com/reference/queue/queue/" target="_blank">STL Queue</a> supports the following operations:</p>
 <table>
   <tr>
     <th>Member Function</th>
     <th>Definition</th>
   </tr>
   <tr>
-    <td>empty</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/empty/" target="_blank">empty()</a></td>
     <td>Test whether container is empty</td>
   </tr>
   <tr>
-    <td>size</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/size/" target="_blank">size()</a></td>
     <td>Return size</td>
   </tr>
   <tr>
-    <td>front</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/front/" target="_blank">front()</a></td>
     <td>Access the next element</td>
   </tr>
   <tr>
-    <td>back</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/back/" target="_blank">back()</a></td>
     <td>Access the last element</td>
   </tr>
   <tr>
-    <td>push</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/push/" target="_blank">push()</a></td>
     <td>Insert element</td>
   </tr>
   <tr>
-    <td>emplace</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/emplace/" target="_blank">emplace()</a></td>
     <td>Construct and insert element</td>
   </tr>
   <tr>
-    <td>pop</td>
+    <td><a href="http://www.cplusplus.com/reference/queue/queue/pop/" target="_blank">pop()</a></td>
     <td>Remove top element</td>
   </tr>
 </table>
@@ -457,38 +468,39 @@
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
-    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
-    <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myQueue</span><span class="p">;</span>
+    <span class="n">myQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="n">myQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myQueue</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myQueue</span><span class="p">.</span><span class="n">back</span><span class="p">();</span>
+    <span class="n">myQueue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
         <span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlight language-c--" data-lang="c++"><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span></code> declares a queue of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">q</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the queue, while <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the queue. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span></code> prints 8, while <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">()</span></code> prints 4. To check if the queue is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
+<p><code class="highlight language-c--" data-lang="c++"><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myQueue</span></code> declares a queue of integers named <code class="highlight language-c--" data-lang="c++"><span class="n">myQueue</span></code>. <code class="highlight language-c--" data-lang="c++"><span class="n">myQueue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> inserts elements into the queue, while <code class="highlight language-c--" data-lang="c++"><span class="n">myQueue</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span></code> removes elements from the queue. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myQueue</span><span class="p">.</span><span class="n">front</span><span class="p">()</span></code> prints 8, while <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myQueue</span><span class="p">.</span><span class="n">back</span><span class="p">()</span></code> prints 4. To check if the queue is empty, <code class="highlight language-c--" data-lang="c++"><span class="n">myQueue</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span></code> is called.</p>
 
 <p><br /></p>
 
 <h4 id="stl-map">STL Map</h4>
-<p>The STL Map supports the following operations:</p>
+
+<p>The <a href="http://www.cplusplus.com/reference/map/map/" target="_blank">STL Map</a> supports the following operations:</p>
 <table>
   <tr>
     <th>Member Function</th>
     <th>Definition</th>
   </tr>
   <tr>
-    <td>erase</td>
+    <td><a href="http://www.cplusplus.com/reference/map/map/erase/" target="_blank">erase()</a></td>
     <td>Erase elements</td>
   </tr>
   <tr>
-    <td>clear</td>
+    <td><a href="http://www.cplusplus.com/reference/map/map/clear/" target="_blank">clear()</a></td>
     <td>Clear content</td>
   </tr>
   <tr>
-    <td>find</td>
+    <td><a href="http://www.cplusplus.com/reference/map/map/find/" target="_blank">find()</a></td>
     <td>Get iterator to element</td>
   </tr>
 </table>
@@ -506,7 +518,7 @@
     <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">];</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">];</span>
-    <span class="n">q</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">"tommy"</span><span class="p">);</span>
+    <span class="n">age</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">"tommy"</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><code class="highlight language-c--" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">age</span></code> declares a map with strings as keys and integers as values. <code class="highlight language-c--" data-lang="c++"><span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span></code> inserts the key, value pair “tommy” and 20 into the map, while <code class="highlight language-c--" data-lang="c++"><span class="n">age</span><span class="p">.</span><span class="n">erase</span><span class="p">()</span></code> removes the key, value pair from the map. <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"tommy"</span><span class="p">]</span></code> prints 20, while <code class="highlight language-c--" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">age</span><span class="p">[</span><span class="s">"oscar"</span><span class="p">]</span></code> prints 21.</p>
